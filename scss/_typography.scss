@@ -1,0 +1,23 @@
+@use 'variables' as *;
+
+html {
+    font-size: 18px;
+    line-height: 1.4;   
+    font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+h1 {
+    font-size: clamp(2.65rem, 7vw, 4rem);
+    font-weight: 800;
+    line-height: 1.08;
+}
+
+h2 {
+    font-size: clamp(1.5rem, 3.5vw, 3.5rem);
+    font-weight: 800;
+    line-height: 0.95;
+}
+
+a {
+    color: $primary;
+}
