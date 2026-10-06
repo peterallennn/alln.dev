@@ -41,7 +41,7 @@
 
     header {
         position: relative;
-        z-index: 1;
+        z-index: 100;
 
         &:after {
             content: '';
@@ -172,12 +172,12 @@
     }
 }
 
-@media (max-width: 52rem) {
+@media (max-width: 991px) {
     #hero {
         header {
             &::after {
-                height: 4.75rem;
-                top: 0;
+                height: 2.1rem;
+                top: 1.4rem;
             }
 
             .container {
@@ -186,8 +186,10 @@
             }
 
             .logo {
-                max-width: 10.5rem;
-                padding: 0.4rem;
+                align-self: flex-start;
+                max-width: min(18rem, calc(100% - 4rem));
+                padding: 1.15rem 1.25rem;
+                transform-origin: center top;
             }
 
             .nav-toggle {
@@ -203,6 +205,7 @@
                 justify-content: center;
                 padding: 0;
                 position: relative;
+                flex-shrink: 0;
                 width: 2.75rem;
                 z-index: 3;
 
@@ -249,6 +252,7 @@
                 transform: translateY(-0.5rem);
                 transition: opacity 160ms ease, transform 160ms ease, visibility 160ms;
                 visibility: hidden;
+                z-index: 10;
 
                 &.is-open {
                     opacity: 1;
@@ -284,7 +288,7 @@
 
         .hero-content {
             height: auto;
-            min-height: calc(100svh - 4.75rem);
+            min-height: calc(85svh - 4.75rem);
             padding-block: 4rem;
 
             .container {
@@ -330,6 +334,12 @@
         inset: 0;
         position: absolute;
         z-index: -2;
+
+        @media (max-width: 991px) {
+            background-position: center 16%;
+            background-repeat: no-repeat;
+            background-size: 175%;
+        }
     }
 
     &::after {
@@ -363,6 +373,7 @@
         transform: translate3d(0, var(--bristol-heading-y), 0);
         will-change: transform;
         margin-top: -3rem;
+        font-size: 2.75rem;
     }
 
     .image-note {
@@ -420,10 +431,16 @@
     #bristol {
         padding: 0.85rem 1rem;
 
+        &::before {
+            background-position: 57% 16%;
+            background-repeat: no-repeat;
+            background-size: 221%;
+        }
+
         h2 {
-            font-size: clamp(1.25rem, 6vw, 1.6rem);
+            font-size: clamp(1.25rem, 6vw, 2.5rem);
             line-height: 0.98;
-            margin-top: 0;
+            margin-top: -2rem;
             max-width: 14ch;
         }
 
@@ -771,7 +788,7 @@
     }
 }
 
-@media (max-width: 44rem) {
+@media (max-width: 850px) {
     .contact-cta__layout {
         grid-template-columns: 1fr;
         min-height: 0;
@@ -779,14 +796,19 @@
 
     .contact-cta__copy {
         padding-bottom: 3rem;
+        text-align: center;
+
+        h2,
+        p {
+            margin-left: auto;
+            margin-right: auto;
+        }
     }
 
     .contact-cta__image {
         align-self: end;
         display: flex;
         justify-content: center;
-        margin-top: -1.25rem;
-        order: -1;
         position: relative;
 
         img {

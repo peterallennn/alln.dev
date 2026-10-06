@@ -37,7 +37,7 @@ if (navToggle && mainNavigation) {
   });
 
   window.addEventListener('resize', () => {
-    if (window.matchMedia('(min-width: 52.001rem)').matches) {
+    if (window.matchMedia('(min-width: 992px)').matches) {
       setNavigationOpen(false);
     }
   });
